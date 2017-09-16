@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="Data">
+  <Asset Type="Data:BaseClass[]">
+    <Item>
+      <Name>Warrior</Name>
+      <Attributes>
+        <HP>120</HP>
+        <Atk>14</Atk>
+      </Attributes>
+    </Item>
+    <Item>
+      <Name>Rogue</Name>
+      <Attributes>
+        <HP>92</HP>
+        <Atk>26</Atk>
+      </Attributes>
+    </Item>
+    <Item>
+      <Name>Archer</Name>
+      <Attributes>
+        <HP>86</HP>
+        <Atk>20</Atk>
+      </Attributes>
+    </Item>
+  </Asset>
+</XnaContent>

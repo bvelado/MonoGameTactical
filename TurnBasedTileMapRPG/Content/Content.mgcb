@@ -10,6 +10,24 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\Data\bin\Debug\Data.dll
 
 #---------------------------------- Content ---------------------------------#
+
+#begin baseClasses.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:baseClasses.xml
+
+#begin Debug.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Debug.spritefont
+
+#begin baseEquipments.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:baseEquipments.xml
 

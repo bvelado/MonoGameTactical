@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnBasedTileMapRPG", "TurnBasedTileMapRPG\TurnBasedTileMapRPG.csproj", "{087705B1-415C-4962-9ED5-1E5836B1CC48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameProject", "TurnBasedTileMapRPG\GameProject.csproj", "{087705B1-415C-4962-9ED5-1E5836B1CC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7114A4C0-B03D-432C-BBB4-C26E2A0501F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBuilder", "DataBuilder\DataBuilder.csproj", "{BC3F12ED-4577-4AFE-9F4E-A440D9160B1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{087705B1-415C-4962-9ED5-1E5836B1CC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{087705B1-415C-4962-9ED5-1E5836B1CC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{087705B1-415C-4962-9ED5-1E5836B1CC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7114A4C0-B03D-432C-BBB4-C26E2A0501F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7114A4C0-B03D-432C-BBB4-C26E2A0501F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7114A4C0-B03D-432C-BBB4-C26E2A0501F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7114A4C0-B03D-432C-BBB4-C26E2A0501F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3F12ED-4577-4AFE-9F4E-A440D9160B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3F12ED-4577-4AFE-9F4E-A440D9160B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3F12ED-4577-4AFE-9F4E-A440D9160B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3F12ED-4577-4AFE-9F4E-A440D9160B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

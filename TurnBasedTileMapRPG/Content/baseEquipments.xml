@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="Data">
+  <Asset Type="Data:BaseEquipment[]">
+    <Item>
+      <Name>Iron Helmet</Name>
+      <Attributes>
+        <HP>14</HP>
+        <Atk>0</Atk>
+      </Attributes>
+      <SlotType>Head</SlotType>
+    </Item>
+    <Item>
+      <Name>Small ring of life</Name>
+      <Attributes>
+        <HP>6</HP>
+        <Atk>0</Atk>
+      </Attributes>
+      <SlotType>Ring</SlotType>
+    </Item>
+    <Item>
+      <Name>Spiked armor</Name>
+      <Attributes>
+        <HP>-6</HP>
+        <Atk>4</Atk>
+      </Attributes>
+      <SlotType>Body</SlotType>
+    </Item>
+    <Item>
+      <Name>Furious Getas</Name>
+      <Attributes>
+        <HP>4</HP>
+        <Atk>6</Atk>
+      </Attributes>
+      <SlotType>Feet</SlotType>
+    </Item>
+  </Asset>
+</XnaContent>

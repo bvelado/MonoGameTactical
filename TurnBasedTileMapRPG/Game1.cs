@@ -1,6 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Diagnostics;
+using Data;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using TurnBasedTileMapRPG.Screen;
 
 namespace TurnBasedTileMapRPG
 {
@@ -11,11 +14,17 @@ namespace TurnBasedTileMapRPG
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+        ScreenController screenController;
+
+        HumanCharacter[] characters;
+        SpriteFont debugFont;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            screenController = new ScreenController(graphics);
         }
 
         /// <summary>
@@ -27,6 +36,30 @@ namespace TurnBasedTileMapRPG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            screenController.Initialize();
+
+            BaseClass[] baseClasses = Content.Load<BaseClass[]>("baseClasses");
+
+            characters = new HumanCharacter[3];
+            characters[0] = new HumanCharacter("Harold", new Class(baseClasses[0]));
+            characters[1] = new HumanCharacter("Mary", new Class(baseClasses[2]));
+            characters[2] = new HumanCharacter("Chester", new Class(baseClasses[1]));
+
+            BaseEquipment[] equipmentsData = Content.Load<BaseEquipment[]>("baseEquipments");
+            Equipment[] equipments = new Equipment[equipmentsData.Length];
+            for (int i = 0; i < equipmentsData.Length; i++)
+            {
+                equipments[i] = new Equipment(equipmentsData[i]);
+            }
+
+            foreach(var equipment in equipments)
+            {
+                var randomCharacter = characters[RandomController.Instance.Range(0, characters.Length)];
+                if (randomCharacter.Inventory.HasSlot(equipment.SlotType))
+                {
+                    randomCharacter.Inventory.SetEquipmentAt(equipment.SlotType, equipment);
+                }
+            }
 
             base.Initialize();
         }
@@ -41,6 +74,8 @@ namespace TurnBasedTileMapRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            debugFont = Content.Load<SpriteFont>("Debug");
         }
 
         /// <summary>
@@ -75,7 +110,20 @@ namespace TurnBasedTileMapRPG
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            screenController.BeginNative(spriteBatch);
+
+            //
             // TODO: Add your drawing code here
+            //
+
+            Vector2 pos = new Vector2();
+            for(int i = 0; i < characters.Length; i++)
+            {
+                spriteBatch.DrawString(debugFont, characters[i].ToString(), pos, Color.White);
+                pos.Y += 100;
+            }
+
+            screenController.EndNative(spriteBatch);
 
             base.Draw(gameTime);
         }
